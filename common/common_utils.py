@@ -93,6 +93,14 @@ def close_ad_if_playing(emulator_device):
         close_ad(emulator_device)
 
 
+def close_app_update(emulator_device):
+    logger.debug(f"{adbutil.full_name(emulator_device)}: close app update window")
+    imgutil.take_screenshot(emulator_device)
+    if check.is_close_update_present(emulator_device):
+        logger.debug(f"{adbutil.full_name(emulator_device)}: closing app update")
+        click(emulator_device, const.CLOSE_APP_UPDATE[const.CLICK_LOCATION_KEY])
+
+
 def drink_beer(emulator_device):
     logger.debug(f"{adbutil.full_name(emulator_device)}: Drinking beer")
     click(emulator_device, const.DRINK_BEER_MUSHROOM_BUTTON[const.CLICK_LOCATION_KEY])

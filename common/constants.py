@@ -111,7 +111,8 @@ NEW_LEVEL_OK_BUTTON = new_button("new-level-button", new_dimensions(400, 1450, 7
 # -----------------------
 WALLPAPER_DATA = new_button("wallpaper", new_dimensions(300, 300, 350, 350), new_location(0, 0))
 PROFILE_BUTTON = new_button("profile-button", new_dimensions(255, 200, 820,280), new_location(530, 995))
-
+# -----------------------
+CLOSE_APP_UPDATE = new_button("close-update", new_dimensions(550, 1450, 980, 1600), new_location(750, 1550))
 # QUESTS
 # ----------- NPCS
 TAVERN_MASTER = new_npc("tavern-master", new_dimensions(779, 764, 879, 864), new_location(822, 815))

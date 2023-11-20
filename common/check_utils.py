@@ -260,3 +260,12 @@ def can_drink_more(emulator_device, can_use_mushrooms=const.CAN_USE_MUSHROOMS_FO
     return False
 
 
+def is_close_update_present(emulator_device):
+    imgutil.crop_screenshot(emulator_device, const.CLOSE_APP_UPDATE[const.DIMENSIONS_KEY], const.CLOSE_APP_UPDATE[const.NAME_KEY])
+    if ocrutil.are_images_similar(emulator_device,
+                           imgutil.get_cropped_screenshot_path(emulator_device, const.CLOSE_APP_UPDATE[const.NAME_KEY]),
+                           const.CLOSE_APP_UPDATE[const.PATH_KEY],
+                           const.MENU_BUTTON_IMAGE_DIFF_THRESHOLD):
+        logger.debug(f"{adbutil.full_name(emulator_device)}: close update found by image")
+        return True
+    return False
